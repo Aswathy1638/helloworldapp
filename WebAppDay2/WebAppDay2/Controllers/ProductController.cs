@@ -1,48 +1,38 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using WebAppDay2.Models;
 
 namespace WebAppDay2.Controllers
 {
     public class ProductController : Controller
     {
+        static List<Product> products = new List<Product>();
+        private static int idCounter = 1;
         public IActionResult Index()
         {
-            return View();
-        }
-        public IActionResult Details()
-        {
-            return View();
-        }
-        public IActionResult Create()
-        {
-            return View();
-        }
-        public IActionResult Edit()
-        {
-            return View();
-        }
-        public IActionResult Delete()
-        {
-            return View();
-        }
-      
-
-        /*public string Index()
-        {
-            return "This is the index action method....";
+            return View(products);
         }
         public string Details()
         {
             return "This is the detail action method......";
         }
-        public string Create()
+        [HttpGet("/product/create")]
+        public IActionResult Create()
         {
-            return "This is the create action method....";
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Create(Product product)
+        {
+            product.Id = idCounter++;
+            products.Add(product);
+            return Redirect("Index");
         }
         public string Delete()
         {
             return "This is the delete action method...";
-        */
+        }
     }
+
     }
 
 

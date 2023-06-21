@@ -1,7 +1,13 @@
-﻿@{
-    ViewData["Title"] = "Create";
-}
-
-<h2>Create</h2>
-
-<p>Hello from our Create Template!</p>
+﻿@model Product
+<h1>Create View</h1>
+<form method="post" asp-action="Create">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="Name" value="" />
+    </div>
+    <div>
+        <label for="price">Price:</label>
+        <input type="text" id="price" name="Price" value="" />
+    </div>
+    <button type="submit">Create</button>
+</form>
