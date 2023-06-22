@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\ECom",
+    "\\ECom\\ECom",
+    "\\ECom\\ECom\\Models"
   ],
+  "SelectedNode": "\\ECom",
   "PreviewInSolutionExplorer": false
 }
